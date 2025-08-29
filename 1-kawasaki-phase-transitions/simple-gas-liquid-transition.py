@@ -75,14 +75,14 @@ class GridSimulation:
 
         # --- SLIDER SETUP ---
         self.temperature = tk.DoubleVar()
-        self.temperature.set(50) # Set the initial value
+        self.temperature.set(0.1) # Set the initial value
 
         # 2. Create the Scale (slider) widget.
         self.slider = tk.Scale(
             root,
             variable=self.temperature,
             from_=0.1,                
-            to=100,                
+            to=5,                
             orient=tk.HORIZONTAL,     
             label="Temperature", 
             resolution=0.1
