@@ -6,7 +6,7 @@ import math
 import copy
 
 # --- Grid Constants ---
-GRID_WIDTH = 15       # Number of cells horizontally
+GRID_WIDTH = 15     # Number of cells horizontally
 GRID_HEIGHT = 15      # Number of cells vertically
 CELL_SIZE = 20        # Size of each cell in pixels
 SCREEN_WIDTH = GRID_WIDTH * CELL_SIZE
@@ -57,7 +57,7 @@ def count_neighbors(coord, g):
 class GridSimulation:
     def __init__(self, root):
         self.root = root
-        self.root.title("2D Grid for Fluid Simulation (Tkinter)")
+        self.root.title("Gas-Liquid Transition (Kawasaki dynamics)")
 
         # --- Grid Data Structure ---
         # The same 2D list to hold the state of our simulation
