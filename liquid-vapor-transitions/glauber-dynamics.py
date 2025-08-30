@@ -3,10 +3,11 @@ import time
 import numpy as np
 import random
 import math
+from PIL import Image, ImageTk
 
 # --- Grid Constants ---
-GRID_WIDTH = 50     # Number of cells horizontally
-GRID_HEIGHT = 30    # Number of cells vertically
+GRID_WIDTH = 40     # Number of cells horizontally
+GRID_HEIGHT = 20    # Number of cells vertically
 CELL_SIZE = 10      # Size of each cell in pixels
 SCREEN_WIDTH = GRID_WIDTH * CELL_SIZE
 SCREEN_HEIGHT = GRID_HEIGHT * CELL_SIZE
@@ -123,7 +124,7 @@ class GridSimulation:
 
         # Define the variables for the 2D slider
         self.temperature_2d_var = tk.DoubleVar(value=TEMP_INIT) # X-axis
-        self.potential_var = tk.DoubleVar(value=POTENTIAL_INIT)       # Y-axis
+        self.potential_var = tk.DoubleVar(value=POTENTIAL_INIT) # Y-axis
 
         # Define the visual properties of the 2D slider
         self.slider_2d_width = 150
@@ -140,6 +141,11 @@ class GridSimulation:
             relief="solid"
         )
         self.slider_2d_canvas.pack()
+
+        bg_image_pil = Image.open("sampled-phase-diagram.png").resize((self.slider_2d_width+10, self.slider_2d_height+10))
+        self.slider_bg_photo = ImageTk.PhotoImage(bg_image_pil)
+    
+        self.slider_2d_canvas.create_image(0, 0, anchor=tk.NW, image=self.slider_bg_photo)
 
         # Create the draggable knob
         initial_x, initial_y = self._coords_to_pixels(self.temperature_2d_var.get(), self.potential_var.get())

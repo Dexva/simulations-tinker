@@ -14,7 +14,7 @@ SCREEN_HEIGHT = GRID_HEIGHT * CELL_SIZE
 # --- Simulation Constants ---
 DENSITY = 0.3
 TEMP_INIT = 0.01
-TEMP_MAX = 2.0
+TEMP_MAX = 1.0
 TEMP_MIN = 0.01
 
 # Colors
