@@ -22,7 +22,7 @@ The adjustable simulation parameters are:
 - `D = 0.0001` (diffusion coefficient for dyes)
 
 You may also toggle the following Booleans to record some data:
-- `jet_colormap` (Controls the fluids colors; True = cool-warm colorscheme, False = greyscale)
+- `jet_colormap_bool` (Controls the fluids colors; True = cool-warm colorscheme, False = greyscale)
 - `recording` (Save frames in a specified range; Can be later stitched as a video)
 - `snapshot` (Takes a specified frame and saves it as an image)
 - `data_collection` (Collects the reaction yield and fluxes at the outlet up to a certain end frame number and saves it as a .csv file)
