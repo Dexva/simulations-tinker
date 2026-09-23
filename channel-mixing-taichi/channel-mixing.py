@@ -24,7 +24,7 @@ viscosity_implem = "implicit"   # "explicit" or "implicit"
 
 ## - DATA RECORDING STUFF -- ##
 
-jet_colormap = True             # use jet colormap for fluid speed visualization, otherwise grayscale
+jet_colormap_bool = False             # use jet colormap for fluid speed visualization, otherwise grayscale
 
 ti.init(arch=ti.metal)
 recording = False               # for saving frames for a video
@@ -116,7 +116,7 @@ def update_colors():
         base_color = jet_colormap(val)
 
         # Grey-scale fluid -- uncomment to see jet colormap instead
-        if not jet_colormap:
+        if not jet_colormap_bool:
             intensity = 0.50 + (val * 0.5) 
             base_color = ti.Vector([intensity, intensity, intensity])
 
